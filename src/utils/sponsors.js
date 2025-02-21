@@ -1,30 +1,30 @@
 const sponsorsData = [
   {
-    src: "./images/sponsors/spalding-logo.svg",
+    src: "https://storage.googleapis.com/la_liga_files/basketcenter/sponsors/spalding-logo.svg",
     alt: "spalding",
   },
   {
-    src: "./images/sponsors/scouting_peru.png",
+    src: "https://storage.googleapis.com/la_liga_files/basketcenter/sponsors/scouting_peru.png",
     alt: "Scouting Perú",
   },
   {
-    src: "./images/sponsors/liga_de_lima.jpeg",
+    src: "https://storage.googleapis.com/la_liga_files/basketcenter/sponsors/liga_de_lima.jpeg",
     alt: "Liga de Lima",
   },
   {
-    src: "./images/sponsors/todo_basket_peru.jpg",
+    src: "https://storage.googleapis.com/la_liga_files/basketcenter/sponsors/todo_basket_peru.jpg",
     alt: "Todo Basket Perú",
   },
   {
-    src: "./images/sponsors/spalding-logo.svg",
+    src: "https://storage.googleapis.com/la_liga_files/basketcenter/sponsors/spalding-logo.svg",
     alt: "spalding",
   },
   {
-    src: "./images/sponsors/spalding-logo.svg",
+    src: "https://storage.googleapis.com/la_liga_files/basketcenter/sponsors/spalding-logo.svg",
     alt: "spalding",
   },
   {
-    src: "./images/sponsors/spalding-logo.svg",
+    src: "https://storage.googleapis.com/la_liga_files/basketcenter/sponsors/spalding-logo.svg",
     alt: "spalding",
   },
 ];
