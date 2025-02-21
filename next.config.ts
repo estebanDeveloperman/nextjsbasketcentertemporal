@@ -6,7 +6,7 @@ const isProd = process.env.NODE_ENV === 'production';
 const nextConfig: NextConfig = {
   basePath: isProd ? '/nextjsbasketcentertemporal' : '',
   output: 'export',
-  distDir: 'dist',
+  distDir: 'out',
   assetPrefix: "/nextjsbasketcentertemporal", // ✅ Prefijo correcto
   images: {
     unoptimized: true,
