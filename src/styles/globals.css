@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Definir la animación de desvanecimiento y movimiento desde abajo */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px); /* Inicia desde abajo */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Termina en su posición original */
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s ease-out forwards;
+}
+
+@keyframes slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-left {
+  animation: slide-left 1s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slide-right 1s ease-out forwards;
+}
+
+#staff .swiper-button-next,
+#staff .swiper-button-prev {
+  color: white !important;
+}
+
+#sponsors .swiper-button-next,
+#sponsors .swiper-button-prev {
+  /* color: white !important; */
+  color: rgb(0, 0, 0) !important;
+}
+
+#staff .swiper-pagination-bullet {
+  background-color: white !important; /* Cambia el color de los puntos */
+  opacity: 0.7;
+  width: 12.5px !important;
+  height: 12.5px !important;
+  margin: 0 8px !important; /* Espaciado entre puntos */
+}
+
+#sponsors .swiper-pagination-bullet {
+  background-color: rgb(0, 0, 0) !important; /* Cambia el color de los puntos */
+  opacity: 0.7;
+  width: 12.5px !important;
+  height: 12.5px !important;
+  margin: 0 8px !important; /* Espaciado entre puntos */
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important; /* Resalta el punto activo */
+}
