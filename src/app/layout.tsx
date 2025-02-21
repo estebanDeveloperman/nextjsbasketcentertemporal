@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   description:
     "Únete a Basket Center, la mejor escuela de básquet en Perú. Entrenamiento profesional para todas las edades.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "https://storage.googleapis.com/la_liga_files/basketcenter/favicon.ico",
   },
   openGraph: {
     title: "Basket Center - Escuela de Básquet en Perú",

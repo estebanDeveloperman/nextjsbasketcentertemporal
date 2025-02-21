@@ -22,7 +22,11 @@ const sponsorsData = [
   {
     src: "https://storage.googleapis.com/la_liga_files/basketcenter/sponsors/spalding-logo.svg",
     alt: "spalding",
-  }
+  },
+  {
+    src: "https://storage.googleapis.com/la_liga_files/basketcenter/sponsors/spalding-logo.svg",
+    alt: "spalding",
+  },
 ];
 
 export default sponsorsData;
