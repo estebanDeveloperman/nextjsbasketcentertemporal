@@ -125,33 +125,32 @@ function StaffCard({ image, onClick }) {
 function Modal({ image, onClose }) {
   return (
     <div
-      className="fixed inset-0 flex items-center justify-center bg-[#222222] bg-opacity-90 z-50"
+      className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50 px-4 py-10"
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
-      <div className="relative max-w-4xl w-full flex bg-[#222222] rounded-lg shadow-lg overflow-hidden">
+      <div className="relative w-full max-w-5xl bg-[#222222] rounded-lg shadow-lg overflow-hidden flex flex-col md:flex-row max-h-[90vh] md:max-h-[80vh]">
+
         {/* Imagen del staff */}
-        <div className="w-1/2 flex items-center justify-center">
+        <div className="md:w-1/2 flex items-center justify-center p-4">
           <Image
             src={image.src}
             alt={image.alt}
-            width={400} // Tamaño fijo para que no se recorte
-            height={500} // Ajustar para ver la imagen completa
-            className="object-contain"
+            width={800}
+            height={800}
+            className="object-cover rounded-lg w-full h-auto"
             priority={true}
           />
         </div>
 
         {/* Experiencia profesional */}
         {image.text && image.text.length > 0 && (
-          <div className="w-1/2 p-6 bg-[#222222] text-white flex flex-col justify-center">
-            <h3 className="text-xl font-extrabold text-[#e43920] mb-4 uppercase">
-              EXPERIENCIA PROFESIONAL
+          <div className="md:w-1/2 p-6 text-white flex flex-col justify-start overflow-y-auto">
+            <h3 className="text-2xl font-extrabold text-[#e43920] mb-4 uppercase text-left">
+              Experiencia Profesional
             </h3>
-            <ul className="text-sm space-y-2">
+            <ul className="text-lg text-left space-y-2">
               {image.text.map((item, index) => (
-                <li key={index} className="opacity-90">
-                  {item}
-                </li>
+                <li key={index} className="opacity-90">{item}</li>
               ))}
             </ul>
           </div>
@@ -160,7 +159,7 @@ function Modal({ image, onClose }) {
         {/* Botón de cierre */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 bg-white text-[#c54527] text-2xl font-bold w-10 h-10 flex items-center justify-center rounded-full shadow-lg hover:bg-[#c54527] hover:text-white transition-all duration-300 transform hover:scale-110 focus:outline-none"
+          className="absolute top-3 right-3 bg-white text-[#c54527] text-3xl font-bold w-12 h-12 flex items-center justify-center rounded-full shadow-lg hover:bg-[#c54527] hover:text-white transition-all duration-300 transform hover:scale-110 focus:outline-none"
           aria-label="Cerrar modal"
         >
           ✕
@@ -169,4 +168,7 @@ function Modal({ image, onClose }) {
     </div>
   );
 }
+
+
+
 

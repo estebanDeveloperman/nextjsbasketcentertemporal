@@ -18,6 +18,12 @@ const storeData = [
     price: "59.99",
   },
   {
+    src: "https://storage.googleapis.com/la_liga_files/basketcenter/store/polo_entrenamiento.png",
+    alt: "Polo de Entrenamiento Basketcenter",
+    name: "Polo de Entrenamiento ",
+    price: "29.99",
+  },
+  {
     src: "https://storage.googleapis.com/la_liga_files/basketcenter/store/medias.png",
     alt: "Medias",
     name: "Medias Oficiales de Basketcenter",

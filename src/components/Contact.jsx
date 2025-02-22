@@ -217,7 +217,7 @@ const Contact = () => {
                             +51 926 868 587
                         </p>
                         {/* Redes sociales */}
-                        <div className="flex gap-4 mt-4">
+                        <div className="flex gap-4 mt-5">
                             <a
                                 href="https://web.facebook.com/basketcenter.pe"
                                 target="_blank"
@@ -247,7 +247,7 @@ const Contact = () => {
                                 <FaTiktok size={24} />
                             </a>
                             <a
-                                href="https://www.instagram.com/clubbasketcenter/"
+                                href="https://www.youtube.com/@clubbasketcenter/featured"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Instagram"
@@ -255,9 +255,18 @@ const Contact = () => {
                             >
                                 <FaYoutube size={24} />
                             </a>
+                            <a
+                                href="https://wa.me/51926868587"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Instagram"
+                                className="text-white hover:text-[#e43920] transition-colors duration-300"
+                            >
+                                <FaWhatsapp size={24} />
+                            </a>
                         </div>
                         {/* Botón de WhatsApp destacado */}
-                        <a
+                        {/* <a
                             href="https://wa.me/51926868587"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -266,7 +275,7 @@ const Contact = () => {
                         >
                             <FaWhatsapp size={24} />
                             WhatsApp
-                        </a>
+                        </a> */}
                     </motion.div>
                 </div>
             </div>

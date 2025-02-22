@@ -4,6 +4,7 @@ import Main from "@/components/Main";
 import About from "@/components/About";
 import Staff from "@/components/Staff";
 import Achievements from "@/components/Achievements";
+import Schedule from "@/components/Schedule";
 import Contact from "@/components/Contact";
 import Gallery from "@/components/Gallery";
 import Sponsors from "@/components/Sponsors";
@@ -18,6 +19,7 @@ export default function HomePage() {
       <About />
       <Staff />
       <Achievements />
+      <Schedule />
       <Sponsors />
       {/* <Gallery /> */}
       <Contact />

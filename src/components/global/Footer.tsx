@@ -13,18 +13,26 @@ const Footer = () => {
   return (
     <footer className="bg-[#222222] text-white py-8">
       {/* Contenedor principal */}
-      <div className="container mx-auto px-4 max-w-5xl flex flex-col md:flex-row justify-between items-center gap-6">
+      <div className="container mx-auto px-4 max-w-5xl flex flex-col md:flex-row justify-evenly items-center gap-6">
         {/* Logo y nombre del club */}
         <div className="flex items-center gap-3">
           <Image
             src="https://storage.googleapis.com/la_liga_files/videos/logo_bc-min.png"
             alt="Basketcenter Logo"
-            width={48}
-            height={48}
+            width={52}
+            height={52}
             className="object-contain rounded-full"
             priority={true} // Prioriza la carga si está visible al inicio
           />
-          <h2 className="text-xl font-bold text-[#e43920]">BasketCenter</h2>
+          <Image
+            src="https://storage.googleapis.com/la_liga_files/basketcenter/logos/FIBALOGO.png"
+            alt="FIBA LOGO"
+            width={95}
+            height={95}
+            className="object-contain"
+            priority={true} // Prioriza la carga si está visible al inicio
+          />
+          {/* <h2 className="text-xl font-bold text-[#e43920]">BasketCenter</h2> */}
         </div>
 
         {/* Información de contacto */}
@@ -42,7 +50,7 @@ const Footer = () => {
         </div>
 
         {/* Redes sociales */}
-        <div className="flex gap-4">
+        {/* <div className="flex gap-4">
           <a
             href="https://web.facebook.com/basketcenter.pe"
             target="_blank"
@@ -61,7 +69,7 @@ const Footer = () => {
           >
             <FaInstagram size={24} />
           </a>
-        </div>
+        </div> */}
       </div>
 
       {/* Derechos reservados */}
