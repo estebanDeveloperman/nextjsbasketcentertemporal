@@ -192,15 +192,27 @@ const liga = [
 ];
 const nacional = [
   {
-    src: "https://storage.googleapis.com/la_liga_files/basketcenter/galeria/foto3.jpg",
+    src: "https://storage.googleapis.com/la_liga_files/basketcenter/galeria_prof/nacional/foto1.jpg",
     alt: "Jugador lanzando un tiro libre en BasketCenter",
   },
   {
-    src: "https://storage.googleapis.com/la_liga_files/basketcenter/galeria/foto3.jpg",
+    src: "https://storage.googleapis.com/la_liga_files/basketcenter/galeria_prof/nacional/foto2.jpg",
     alt: "Jugador lanzando un tiro libre en BasketCenter",
   },
   {
-    src: "https://storage.googleapis.com/la_liga_files/basketcenter/galeria/foto3.jpg",
+    src: "https://storage.googleapis.com/la_liga_files/basketcenter/galeria_prof/nacional/foto3.jpg",
+    alt: "Jugador lanzando un tiro libre en BasketCenter",
+  },
+  {
+    src: "https://storage.googleapis.com/la_liga_files/basketcenter/galeria_prof/nacional/foto4.jpg",
+    alt: "Jugador lanzando un tiro libre en BasketCenter",
+  },
+  {
+    src: "https://storage.googleapis.com/la_liga_files/basketcenter/galeria_prof/nacional/foto5.jpg",
+    alt: "Jugador lanzando un tiro libre en BasketCenter",
+  },
+  {
+    src: "https://storage.googleapis.com/la_liga_files/basketcenter/galeria_prof/nacional/foto6.jpg",
     alt: "Jugador lanzando un tiro libre en BasketCenter",
   },
 ];
