@@ -115,8 +115,8 @@ const Achievements = () => {
         className="absolute inset-0 bg-no-repeat bg-center opacity-90"
         style={{
           backgroundImage:
-            "url('https://storage.googleapis.com/la_liga_files/basketcenter/background/fondo3.jpg')",
-          backgroundSize: "90% auto",
+            "url('https://storage.googleapis.com/la_liga_files/basketcenter/background/fondo4.jpg')",
+          backgroundSize: "90% 100%",
           backgroundRepeat: "repeat-y",
         }}
       />
