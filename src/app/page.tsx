@@ -16,14 +16,13 @@ export default function HomePage() {
       {/* <h1>Bienvenido a Basket Center</h1>
       <p>Somos la mejor escuela de básquet en Perú.</p> */}
       <Main />
-      <Counter /> {/* Aquí se renderiza el contador */}
+      <Counter />
       <About />
       <Methodology />
       <Staff />
       <Achievements />
       <Schedule />
-      <Sponsors />
-      {/* <Gallery /> */}
+      <Sponsors />      
       <Contact />
     </main>
   );

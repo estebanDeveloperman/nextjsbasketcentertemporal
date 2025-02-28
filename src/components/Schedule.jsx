@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { FaBasketballBall, FaCalendarAlt, FaVenusMars, FaClock, FaMapMarkerAlt, FaMapPin } from "react-icons/fa";
-import { MdOutlinePlace } from "react-icons/md"
+import { MdOutlinePlace } from "react-icons/md";
 import entrenamientos from "@/utils/scheduleTrain.js";
 
 export default function Schedule() {
@@ -19,52 +19,54 @@ export default function Schedule() {
 
     return (
         <div id="horarios" className="bg-[#222222] text-white py-10 px-4">
-            <h2 className="text-4xl md:text-5xl font-bold text-center text-[#e43920] mb-2 mt-5 flex items-center justify-center gap-3">
-                <FaBasketballBall className="animate-bounce" />
+            <h2 className="text-5xl md:text-6xl font-bold text-center text-white mb-2 mt-5 flex items-center justify-center gap-3 font-bitcrusher tracking-wide">
+                <FaBasketballBall className="animate-bounce text-[#E43920]" />
                 HORARIOS DE ENTRENAMIENTO
-                <FaBasketballBall className="animate-bounce" />
+                <FaBasketballBall className="animate-bounce text-[#E43920]" />
             </h2>
-            <p className="text-center text-2xl mb-2 flex items-center justify-center gap-2">
-                <FaClock className="text-[#e43920]" /> Clase de prueba gratuita, mide tu talento
-            </p>
-            <p className="flex justify-center gap-2 text-gray-300 mb-6">
-                <MdOutlinePlace className="h-5 w-5 text-[#e43920]" />
+            {/* <p className="flex justify-center gap-2 mb-1">
+                <MdOutlinePlace className="h-5 w-5 text-white" />
                 <a
-                    href="https://www.google.com/maps/place/Colegio+Juana+Alarco+de+Dammert,+Av.+Alfredo+Benavides+2315,+Santiago+de+Surco+15048/@-12.1267822,-77.0112208,17z/data=!3m1!4b1!4m6!3m5!1s0x9105c7ffb41dbeab:0xd541e3bb30d66aa3!8m2!3d-12.1267822!4d-77.0086459!16s%2Fg%2F11hg2l_bv1?entry=ttu&g_ep=EgoyMDI1MDIxMC4wIKXMDSoASAFQAw%3D%3D"
+                    href="https://www.google.com/maps/place/Colegio+Juana+Alarco+de+Dammert,+Av.+Alfredo+Benavides+2315,+Santiago+de+Surco+15048/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#e43920] hover:underline"
+                    className="text-white hover:underline"
                 >
                     Av. Alfredo Benavides 2315, Miraflores 15048
                 </a>
+            </p> */}
+            <p className="text-center text-2xl mb-6 flex items-center justify-center gap-2">
+                <FaClock className="text-white" /> Clase de prueba gratuita, mide tu talento
             </p>
 
             {/* Filtros */}
             <div className="flex flex-wrap justify-center gap-4 mb-8">
                 <div className="relative">
-                    <FaVenusMars className="absolute left-3 top-3 text-[#e43920]" />
+                    <FaMapPin className="absolute left-3 top-3 text-white" />
                     <select
-                        onChange={(e) => setSelectedGender(e.target.value)}
-                        value={selectedGender}
-                        className="bg-[#222222] text-white border-2 border-[#e43920] pl-10 pr-4 py-2 rounded-lg outline-none hover:bg-[#333333] transition"
+                        onChange={(e) => setSelectedAge(e.target.value)}
+                        value={selectedAge}
+                        className="bg-black text-white border-2 border-white pl-10 pr-4 py-2 rounded-lg outline-none hover:bg-[#111111] transition"
                     >
-                        <option value="">Todos los Géneros</option>
-                        <option value="Damas">Damas</option>
-                        <option value="Varones">Varones</option>
+                        <option value="">Categoría / Año de Nacimiento</option>
+                        {[...new Map(entrenamientos.map((c) => [c.categoria, c.nacimiento])).entries()].map(([categoria, años]) => (
+                            <option key={categoria} value={años[0]}>
+                                {categoria} / {años.join("-")}
+                            </option>
+                        ))}
                     </select>
                 </div>
 
                 <div className="relative">
-                    <FaMapPin className="absolute left-3 top-3 text-[#e43920]" />
+                    <FaVenusMars className="absolute left-3 top-3 text-white" />
                     <select
-                        onChange={(e) => setSelectedAge(e.target.value)}
-                        value={selectedAge}
-                        className="bg-[#222222] text-white border-2 border-[#e43920] pl-10 pr-4 py-2 rounded-lg outline-none hover:bg-[#333333] transition"
+                        onChange={(e) => setSelectedGender(e.target.value)}
+                        value={selectedGender}
+                        className="bg-black text-white border-2 border-white pl-10 pr-4 py-2 rounded-lg outline-none hover:bg-[#111111] transition"
                     >
-                        <option value="">Todos los Años</option>
-                        {[...new Set(entrenamientos.flatMap((c) => c.nacimiento))].sort((a, b) => b - a).map((year) => (
-                            <option key={year} value={year}>{year}</option>
-                        ))}
+                        <option value="">Género</option>
+                        <option value="Damas">Damas</option>
+                        <option value="Varones">Varones</option>
                     </select>
                 </div>
             </div>
@@ -79,23 +81,27 @@ export default function Schedule() {
                         return (
                             <div
                                 key={index}
-                                className="bg-[#222222] border-2 border-[#e43920] p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 hover:scale-105 cursor-pointer"
+                                className="bg-black p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 hover:scale-105 cursor-pointer border border-black"
                             >
-                                <h3 className="text-xl font-bold flex items-center mb-3 text-[#e43920]">
-                                    <FaBasketballBall className="mr-2" />
+                                <h3 className="text-xl font-bold flex items-center mb-3 text-white">
+                                    <FaBasketballBall className="mr-2 text-white" />
                                     {item.categoria} {item.genero}
                                 </h3>
                                 <p className="text-white flex items-center">
-                                    <FaMapPin className="mr-2 text-[#e43920]" /> Año: {item.nacimiento.join(" / ")}
+                                    <FaMapPin className="mr-2 text-white" /> Año: {item.nacimiento.join(" / ")}
                                 </p>
                                 <p className="text-white flex items-center">
-                                    <FaClock className="mr-2 text-[#e43920]" /> Hora: {item.horaInicio} / {item.horaFin}
+                                    <FaClock className="mr-2 text-white" /> Hora: {item.horaInicio} / {item.horaFin}
                                 </p>
                                 <p className="text-white flex items-center">
-                                    <FaCalendarAlt className="mr-2 text-[#e43920]" /> Días: {item.dias.join(" - ")}
+                                    <FaCalendarAlt className="mr-2 text-white" /> Días: {item.dias.join(" - ")}
                                 </p>
                                 <div className="mt-4 text-center">
-                                    <a href={whatsappLink} target="_blank" className="bg-[#e43920] text-white px-4 py-2 rounded-lg font-bold hover:bg-red-600 transition duration-300">
+                                    <a
+                                        href={whatsappLink}
+                                        target="_blank"
+                                        className="bg-[#E43920] text-white px-4 py-2 rounded-lg font-bold hover:bg-[#C5301A] transition duration-300"
+                                    >
                                         Solicitar Clase de Prueba
                                     </a>
                                 </div>

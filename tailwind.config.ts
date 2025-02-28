@@ -14,6 +14,8 @@ export default {
       },
       fontFamily: {
         montserrat: "var(--font-montserrat)", // Usa la variable CSS
+        gobold: ["Gobold Bold", "sans-serif"],
+        bitcrusher: ["Bitcrusher Condensed", "sans-serif"],
       },
     },
   },

@@ -2,6 +2,7 @@ const staffImages = [
   {
     src: "https://storage.googleapis.com/la_liga_files/images/STAFF_ANDRES.jpg",
     alt: "Andrés Patiño",
+    title: "Experiencia Profesional",
     text: [
       "ENTRENADOR FIBA",
       "ENTRENADOR SELECCIÓN NACIONAL",
@@ -14,6 +15,7 @@ const staffImages = [
   {
     src: "https://storage.googleapis.com/la_liga_files/images/STAFF_CARLOS.jpg",
     alt: "Carlos Vasquez",
+    title: "Experiencia Profesional",
     text: [
       "ENTRENADOR NIVEL 3 ENEFUB (URU)",
       "SELECCIÓN NACIONAL DE URUGUAY",
@@ -27,6 +29,7 @@ const staffImages = [
   {
     src: "https://storage.googleapis.com/la_liga_files/images/STAFF_DIEGOPOL.jpg",
     alt: "Diegopol Torres",
+    title: "Formación Profesional y Logros",
     text: [
       "ENTRENADOR NIVEL I - ISLAS CANARIAS",
       "ENTRENADOR DE INICIACIÓN DEPORTIVA (CANTABRA)",
@@ -38,6 +41,7 @@ const staffImages = [
   {
     src: "https://storage.googleapis.com/la_liga_files/images/STAFF_GONZALO.jpg",
     alt: "Gonzalo Gonzales",
+    title: "Experiencia Profesional",
     text: [
       "COACH FIBA WORLD ASSOCIATION OF BASKETBALL COACHES",
       "ENTRENADOR SELECCIÓN NACIONAL",
@@ -55,16 +59,18 @@ const staffImages = [
   {
     src: "https://storage.googleapis.com/la_liga_files/images/STAFF_LEONEL.jpg",
     alt: "Leonel Barrientos",
+    title: "Formación Profesional y Logros",
     text: [
       "ENTRENADOR NIVEL 1 - ISLAS CANARIAS (ESP)",
       "ESPECIALISTA EN CATEGORÍAS FORMATIVAS",
       "SUB CAMPEÓN LIGA DE LIMA",
-      "NARRADOR DEPORTIVO"
-    ]
+      "NARRADOR DEPORTIVO",
+    ],
   },
   {
     src: "https://storage.googleapis.com/la_liga_files/images/STAFF_MITCHAEL.jpg",
     alt: "Michael Saldaña",
+    title: "Experiencia Profesional",
     text: [
       "ENTRENADOR NIVEL 3 ENEBA (ARG)",
       "ENTRENADOR CODITEP (ARG)",
@@ -74,12 +80,13 @@ const staffImages = [
       "EX ENTRENANDOR CLUB DE REGATAS DE LIMA",
       "CAMPEÓN LIGA DE LIMA",
       "ENTRENADOR LIGA PRESESIONAL FEMENINA (ARG)",
-      "CAMPEÓN U21 TORNEO FEDERAL"
-    ]
+      "CAMPEÓN U21 TORNEO FEDERAL",
+    ],
   },
   {
     src: "https://storage.googleapis.com/la_liga_files/images/STAFF_RONALD.jpg",
     alt: "Ronald Rivera",
+    title: "Experiencia Profesional",
     text: [
       "COACH FIBA WORL ASSOCIATION OF BASKETBALL COACHES",
       "ENTRENADOR COACHES",
@@ -87,8 +94,8 @@ const staffImages = [
       "SUDAMERICANO FIBA",
       "CAMPEÓN LIGA DE LIMA",
       "CAMPEÓN ADECORE",
-      "EX ENTRENADOR REAL CLUB"
-    ]
+      "EX ENTRENADOR REAL CLUB",
+    ],
   },
 ];
 

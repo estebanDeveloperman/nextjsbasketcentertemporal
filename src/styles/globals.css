@@ -100,3 +100,19 @@ body {
 .swiper-pagination-bullet-active {
   opacity: 1 !important; /* Resalta el punto activo */
 }
+
+/* font-gobold */
+@font-face {
+  font-family: 'Gobold Bold';
+  src: url('./Gobold_Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* font-bitcrusher */
+@font-face {
+  font-family: 'Bitcrusher Condensed';
+  src: url('./bitcrusher_condensed_bd.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}

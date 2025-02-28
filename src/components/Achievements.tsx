@@ -127,7 +127,7 @@ const Achievements = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center text-4xl md:text-5xl font-bold text-[#ffffff] mb-10 flex items-center justify-center gap-4"
+          className="text-center text-5xl md:text-6xl font-bold text-[#ffffff] mb-10 flex items-center justify-center gap-4 font-bitcrusher tracking-wide"
         >
           <FaBasketballBall className="text-[#e43920] animate-bounce" />
           TIMELINE <span className="text-[#e43920]">BASKETCENTER</span>

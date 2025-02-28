@@ -26,10 +26,10 @@ export const About = () => {
                 <article
                     className={`text-white max-w-md transform ${inView ? "animate-slide-left" : "opacity-0"}`}
                 >
-                    <h3 className="text-lg font-semibold text-[#e43920] uppercase tracking-wider">
+                    <h3 className="font-bitcrusher tracking-wide text-4xl font-semibold text-[#e43920] uppercase tracking-wider">
                         ¿QUIÉNES SOMOS?
                     </h3>
-                    <h3 className="text-4xl font-bold my-4">NUESTRO EQUIPO</h3>
+                    <h3 className="text-5xl font-bold my-4 font-bitcrusher tracking-wide">NUESTRO EQUIPO</h3>
                     <p className="text-xl text-white/90 leading-relaxed">
                         En Basketcenter, formamos jugadores con mentalidad ganadora. Nuestro compromiso es
                         brindar un entrenamiento de calidad, respaldado por entrenadores con amplia experiencia

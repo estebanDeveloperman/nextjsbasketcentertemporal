@@ -55,7 +55,7 @@ export default function Counter() {
             id="counter-section"
             className="bg-[#222222] py-20 text-center text-white"
         >
-            <div className="container mx-auto flex flex-wrap justify-center gap-12">
+            <div className="container mx-auto flex flex-wrap justify-center gap-12 font-gobold tracking-wide">
                 {counterData.map((item, index) => (
                     <div
                         key={item.id}

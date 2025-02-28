@@ -58,7 +58,7 @@ export default function Staff() {
           hidden: { opacity: 0, y: -50 },
           visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
         }}
-        className="text-white text-4xl md:text-5xl font-bold uppercase mb-10"
+        className="text-white text-5xl md:text-6xl font-bold uppercase mb-10 font-bitcrusher tracking-wide"
       >
         Staff BasketCenter 2025
       </motion.h4>
@@ -162,17 +162,20 @@ function Modal({ image, onClose }) {
 
         {/* Experiencia profesional */}
         {image.text && image.text.length > 0 && (
-          <div className="md:w-1/2 p-6 text-white flex flex-col justify-start overflow-y-auto">
-            <h3 className="text-2xl font-extrabold text-[#e43920] mb-4 uppercase text-left">
-              Experiencia Profesional
+          <div className="md:w-1/2 p-6 text-white flex flex-col justify-center overflow-y-auto text-left">
+            <h3 className="text-4xl font-extrabold text-[#e43920] mb-4 uppercase font-bitcrusher tracking-wide">
+              {image.title}
             </h3>
-            <ul className="text-lg text-left space-y-2">
+
+            <ul className="text-xs space-y-2">
               {image.text.map((item, index) => (
-                <li key={index} className="opacity-90">{item}</li>
+                <li key={index} className="opacity-90">- {item}</li>
               ))}
             </ul>
           </div>
         )}
+
+
 
         {/* Botón de cierre */}
         <button

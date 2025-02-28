@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaTiktok, FaYoutube } from "react-icons/fa";
 import { MdOutlinePlace } from "react-icons/md";
-
+import { FaPhoneAlt } from "react-icons/fa";
 import { send } from "@emailjs/browser";
 
 const Contact = () => {
@@ -91,12 +91,13 @@ const Contact = () => {
                     animate={titleControls}
                     variants={{
                         hidden: { opacity: 0, y: -50 },
-                        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }, // Duración reducida a 0.5s
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
                     }}
-                    className="text-3xl md:text-4xl font-bold text-center text-white mb-8 uppercase"
+                    className="text-4xl md:text-6xl font-bold text-center text-white mb-8 uppercase font-bitcrusher tracking-wide flex items-center justify-center gap-3"
                 >
-                    📞 CONTACTO
+                    CONTACTO
                 </motion.h2>
+
 
                 {/* Contenido: Formulario + Información de contacto */}
                 <div className="flex flex-col md:flex-row gap-8">

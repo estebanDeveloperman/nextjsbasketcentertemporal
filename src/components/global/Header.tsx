@@ -9,13 +9,13 @@ import { FaWhatsapp, FaInstagram, FaFacebook, FaTiktok, FaYoutube } from "react-
 
 // Definir las rutas y elementos del menú
 const menuItems = [
-  { name: "Nosotros", href: "#about-section" },
-  { name: "Staff", href: "#staff" },
-  { name: "Metodología", href: "#methodology" },
-  { name: "Horarios", href: "#horarios" },
-  { name: "Galería", href: "/galeria" },
-  { name: "Contacto", href: "#contacto" },
-  { name: "Tienda", href: "/tienda" },
+  { name: "NOSOTROS", href: "#about-section" },
+  { name: "STAFF", href: "#staff" },
+  { name: "METODOLOGÍA", href: "#methodology" },
+  { name: "HORARIOS", href: "#horarios" },
+  { name: "GALERÍA", href: "/galeria" },
+  { name: "CONCTACTO", href: "#contacto" },
+  { name: "TIENDA", href: "/tienda" },
 ];
 
 export default function Header() {
@@ -50,7 +50,7 @@ export default function Header() {
       {/* Barra superior con redes sociales */}
       <div className="bg-[#222222] text-white py-2 text-sm">
         <div className="container mx-auto flex justify-between items-center px-4 md:px-8">
-          <div className="flex gap-4" style={{ marginLeft: "68px" }}>
+          <div className="flex justify-end gap-4" style={{ marginLeft: "68px" }}>
             <Link
               href="https://wa.me/51926868587"
               target="_blank"
@@ -103,7 +103,7 @@ export default function Header() {
 
       {/* Barra de navegación principal */}
       <nav
-        className="container mx-auto flex items-center justify-between p-4 lg:px-8"
+        className="container mx-auto flex items-center justify-between p-4 lg:px-8 font-gobold"
         aria-label="Menú principal"
       >
         {/* Logo y Nombre */}
@@ -115,7 +115,7 @@ export default function Header() {
             height={55}
             priority
           />
-          <span className="text-2xl font-bold text-[#e43920] tracking-wide">
+          <span className="text-3xl font-bold text-[#ffffff] tracking-wide">
             BASKETCENTER
           </span>
         </div>
@@ -129,7 +129,7 @@ export default function Header() {
                 className="hover:text-[#e43920] transition duration-300"
                 aria-label={`Ir a la sección ${item.name}`}
               >
-                {item.name === "Tienda" ? <MdLocalGroceryStore /> : item.name}
+                {item.name === "TIENDA" ? <MdLocalGroceryStore /> : item.name}
               </button>
             </li>
           ))}
@@ -147,7 +147,7 @@ export default function Header() {
 
       {/* Menú desplegable en Mobile */}
       {menuOpen && (
-        <ul className="absolute top-16 right-4 bg-[#222222] w-48 p-4 rounded-lg shadow-lg flex flex-col gap-4 text-center md:hidden">
+        <ul className="absolute top-24 right-4 bg-[#222222] w-48 p-4 rounded-lg shadow-lg flex flex-col gap-4 text-center md:hidden">
           {menuItems.map((item) => (
             <li key={item.name}>
               <button
