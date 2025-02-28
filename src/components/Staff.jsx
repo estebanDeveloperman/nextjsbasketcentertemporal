@@ -3,14 +3,17 @@
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import Image from "next/image";
 import "swiper/css";
+import "swiper/css/navigation";
 import staffImages from "@/utils/staffImages";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function Staff() {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [swiperInstance, setSwiperInstance] = useState(null);
 
   const openModal = (image) => {
     setSelectedImage(image);
@@ -69,17 +72,32 @@ export default function Staff() {
           hidden: { opacity: 0, y: 50 },
           visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
         }}
-        className="max-w-6xl mx-auto px-4"
+        className="relative max-w-6xl mx-auto px-4"
       >
+        {/* Botones de navegación personalizados */}
+        <button
+          onClick={() => swiperInstance?.slidePrev()}
+          className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-[#e43920] text-white rounded-full shadow-md hover:bg-red-600 transition"
+        >
+          <FaChevronLeft size={24} />
+        </button>
+        <button
+          onClick={() => swiperInstance?.slideNext()}
+          className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 p-2 bg-[#e43920] text-white rounded-full shadow-md hover:bg-red-600 transition"
+        >
+          <FaChevronRight size={24} />
+        </button>
+
         <Swiper
-          modules={[Autoplay]}
+          modules={[Autoplay, Navigation]}
           spaceBetween={20}
           slidesPerView={1}
-          autoplay={{ delay: 0, disableOnInteraction: false }}
-          speed={3000}
+          autoplay={{ delay: 300, disableOnInteraction: false }}
+          speed={1200}
           loop={true}
           grabCursor={true}
-          allowTouchMove={false}
+          allowTouchMove={true}
+          onSwiper={setSwiperInstance} // Guarda la instancia de Swiper
           breakpoints={{
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
@@ -135,8 +153,8 @@ function Modal({ image, onClose }) {
           <Image
             src={image.src}
             alt={image.alt}
-            width={800}
-            height={800}
+            width={950}
+            height={950}
             className="object-cover rounded-lg w-full h-auto"
             priority={true}
           />
@@ -168,7 +186,3 @@ function Modal({ image, onClose }) {
     </div>
   );
 }
-
-
-
-

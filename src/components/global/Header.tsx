@@ -10,7 +10,7 @@ import { MdLocalGroceryStore } from "react-icons/md";
 const menuItems = [
   { name: "Nosotros", href: "#about-section" },
   { name: "Staff", href: "#staff" },
-  { name: "Metodología", href: "#metodologia" },
+  { name: "Metodología", href: "#methodology" },
   { name: "Horarios", href: "#horarios" },
   { name: "Galería", href: "/galeria" },
   { name: "Contacto", href: "#contacto" },

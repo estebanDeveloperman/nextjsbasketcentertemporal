@@ -2,32 +2,18 @@
 
 import { useState } from "react";
 import { FaBasketballBall, FaCalendarAlt, FaVenusMars, FaClock, FaMapMarkerAlt, FaMapPin } from "react-icons/fa";
-
-const categories = [
-    { category: "Pre Minibasket", age: "8 - 10", gender: "Femenino", frequency: "Lu - Mie - Vie" },
-    { category: "Pre Minibasket", age: "8 - 10", gender: "Masculino", frequency: "Ma - Jue" },
-    { category: "Minibasket", age: "11 - 12", gender: "Femenino", frequency: "Lu - Mie - Vie" },
-    { category: "Minibasket", age: "11 - 12", gender: "Masculino", frequency: "Ma - Jue" },
-    { category: "Menores", age: "13", gender: "Femenino", frequency: "Lu - Mie - Vie" },
-    { category: "Menores", age: "13", gender: "Masculino", frequency: "Ma - Jue" },
-    { category: "Medianas", age: "14 - 15", gender: "Femenino", frequency: "Lu - Mie - Vie" },
-    { category: "Medianos", age: "14 - 15", gender: "Masculino", frequency: "Ma - Jue" },
-    { category: "Mayores", age: "16 - 17", gender: "Femenino", frequency: "Lu - Mie - Vie" },
-    { category: "Mayores", age: "16 - 17", gender: "Masculino", frequency: "Ma - Jue" },
-    { category: "Juveniles", age: "17 - 19", gender: "Masculino", frequency: "Lu - Mie - Vie" },
-];
+import { MdOutlinePlace } from "react-icons/md"
+import entrenamientos from "@/utils/scheduleTrain.js";
 
 export default function Schedule() {
-    const [selectedCategory, setSelectedCategory] = useState("");
     const [selectedGender, setSelectedGender] = useState("");
     const [selectedAge, setSelectedAge] = useState("");
 
-    // Filtrar categorías según los filtros seleccionados
-    const filteredCategories = categories.filter((item) => {
+    // Filtrar entrenamientos según Año y Género
+    const filteredTrainings = entrenamientos.filter((item) => {
         return (
-            (!selectedCategory || item.category === selectedCategory) &&
-            (!selectedGender || item.gender === selectedGender) &&
-            (!selectedAge || item.age.includes(selectedAge))
+            (!selectedGender || item.genero === selectedGender) &&
+            (!selectedAge || item.nacimiento.includes(parseInt(selectedAge)))
         );
     });
 
@@ -38,85 +24,78 @@ export default function Schedule() {
                 HORARIOS DE ENTRENAMIENTO
                 <FaBasketballBall className="animate-bounce" />
             </h2>
-            <p className="text-center text-2xl mb-6 flex items-center justify-center gap-2">
+            <p className="text-center text-2xl mb-2 flex items-center justify-center gap-2">
                 <FaClock className="text-[#e43920]" /> Clase de prueba gratuita, mide tu talento
             </p>
-
+            <p className="flex justify-center gap-2 text-gray-300 mb-6">
+                <MdOutlinePlace className="h-5 w-5 text-[#e43920]" />
+                <a
+                    href="https://www.google.com/maps/place/Colegio+Juana+Alarco+de+Dammert,+Av.+Alfredo+Benavides+2315,+Santiago+de+Surco+15048/@-12.1267822,-77.0112208,17z/data=!3m1!4b1!4m6!3m5!1s0x9105c7ffb41dbeab:0xd541e3bb30d66aa3!8m2!3d-12.1267822!4d-77.0086459!16s%2Fg%2F11hg2l_bv1?entry=ttu&g_ep=EgoyMDI1MDIxMC4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#e43920] hover:underline"
+                >
+                    Av. Alfredo Benavides 2315, Miraflores 15048
+                </a>
+            </p>
 
             {/* Filtros */}
             <div className="flex flex-wrap justify-center gap-4 mb-8">
                 <div className="relative">
-                    <FaBasketballBall className="absolute left-3 top-3 text-gray-400" />
-                    <select
-                        onChange={(e) => setSelectedCategory(e.target.value)}
-                        value={selectedCategory}
-                        className="bg-gray-800 text-white pl-10 pr-4 py-2 rounded-lg outline-none hover:bg-gray-700 transition"
-                    >
-                        <option value="">Todas las Categorías</option>
-                        {[...new Set(categories.map((c) => c.category))].map((cat) => (
-                            <option key={cat} value={cat}>{cat}</option>
-                        ))}
-                    </select>
-                </div>
-
-                <div className="relative">
-                    <FaVenusMars className="absolute left-3 top-3 text-gray-400" />
+                    <FaVenusMars className="absolute left-3 top-3 text-[#e43920]" />
                     <select
                         onChange={(e) => setSelectedGender(e.target.value)}
                         value={selectedGender}
-                        className="bg-gray-800 text-white pl-10 pr-4 py-2 rounded-lg outline-none hover:bg-gray-700 transition"
+                        className="bg-[#222222] text-white border-2 border-[#e43920] pl-10 pr-4 py-2 rounded-lg outline-none hover:bg-[#333333] transition"
                     >
                         <option value="">Todos los Géneros</option>
-                        <option value="Femenino">Femenino</option>
-                        <option value="Masculino">Masculino</option>
+                        <option value="Damas">Damas</option>
+                        <option value="Varones">Varones</option>
                     </select>
                 </div>
 
                 <div className="relative">
-                    <FaCalendarAlt className="absolute left-3 top-3 text-gray-400" />
+                    <FaMapPin className="absolute left-3 top-3 text-[#e43920]" />
                     <select
                         onChange={(e) => setSelectedAge(e.target.value)}
                         value={selectedAge}
-                        className="bg-gray-800 text-white pl-10 pr-4 py-2 rounded-lg outline-none hover:bg-gray-700 transition"
+                        className="bg-[#222222] text-white border-2 border-[#e43920] pl-10 pr-4 py-2 rounded-lg outline-none hover:bg-[#333333] transition"
                     >
-                        <option value="">Todas las Edades</option>
-                        {[...new Set(categories.map((c) => c.age))].map((age) => (
-                            <option key={age} value={age}>{age}</option>
+                        <option value="">Todos los Años</option>
+                        {[...new Set(entrenamientos.flatMap((c) => c.nacimiento))].sort((a, b) => b - a).map((year) => (
+                            <option key={year} value={year}>{year}</option>
                         ))}
                     </select>
                 </div>
             </div>
 
-            {/* Cards de categorías */}
+            {/* Cards de entrenamiento */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
-                {filteredCategories.length > 0 ? (
-                    filteredCategories.map((item, index) => {
-                        const whatsappMessage = `Hola, vengo de la página web de Basketcenter y quiero solicitar mi clase de prueba gratuita, Categoría ${item.category}`;
+                {filteredTrainings.length > 0 ? (
+                    filteredTrainings.map((item, index) => {
+                        const whatsappMessage = `Hola, vengo de la página web de Basketcenter y quiero solicitar mi clase de prueba gratuita, Categoría ${item.categoria} ${item.genero}`;
                         const whatsappLink = `https://wa.me/51926868587?text=${encodeURIComponent(whatsappMessage)}`;
 
                         return (
-                            <div key={index} className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 hover:scale-105 cursor-pointer">
+                            <div
+                                key={index}
+                                className="bg-[#222222] border-2 border-[#e43920] p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 hover:scale-105 cursor-pointer"
+                            >
                                 <h3 className="text-xl font-bold flex items-center mb-3 text-[#e43920]">
                                     <FaBasketballBall className="mr-2" />
-                                    {item.category}
+                                    {item.categoria} {item.genero}
                                 </h3>
-                                <p className="text-gray-300 flex items-center">
-                                    <FaCalendarAlt className="mr-2 text-[#e43920]" /> Edad: {item.age}
+                                <p className="text-white flex items-center">
+                                    <FaMapPin className="mr-2 text-[#e43920]" /> Año: {item.nacimiento.join(" / ")}
                                 </p>
-                                <p className="text-gray-300 flex items-center">
-                                    <FaVenusMars className="mr-2 text-[#e43920]" /> Género: {item.gender}
+                                <p className="text-white flex items-center">
+                                    <FaClock className="mr-2 text-[#e43920]" /> Hora: {item.horaInicio} / {item.horaFin}
                                 </p>
-                                <p className="text-gray-300 flex items-center">
-                                    <FaClock className="mr-2 text-[#e43920]" /> Frecuencia: {item.frequency}
+                                <p className="text-white flex items-center">
+                                    <FaCalendarAlt className="mr-2 text-[#e43920]" /> Días: {item.dias.join(" - ")}
                                 </p>
-
                                 <div className="mt-4 text-center">
-                                    <a
-                                        href={whatsappLink}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="bg-[#e43920] text-white px-4 py-2 rounded-lg font-bold hover:bg-red-600 transition duration-300"
-                                    >
+                                    <a href={whatsappLink} target="_blank" className="bg-[#e43920] text-white px-4 py-2 rounded-lg font-bold hover:bg-red-600 transition duration-300">
                                         Solicitar Clase de Prueba
                                     </a>
                                 </div>
@@ -124,20 +103,9 @@ export default function Schedule() {
                         );
                     })
                 ) : (
-                    <p className="text-center text-lg text-gray-400 col-span-3">
-                        No hay horarios disponibles con los filtros seleccionados.
-                    </p>
+                    <p className="text-center text-lg text-gray-400 col-span-3">No hay horarios disponibles.</p>
                 )}
             </div>
-
-            {/* Ubicación */}
-            <div className="mt-10 text-lg flex justify-center items-center">
-                <FaMapPin className="mr-2 text-[#e43920]" />
-                <strong>Colegio Juana Alarco de Dammert</strong>
-            </div>
-            <p className="text-lg flex justify-center items-center">
-                <FaMapMarkerAlt className="mr-2 text-[#e43920]" /> Av. Alfredo Benavides 2315 - Miraflores
-            </p>
         </div>
     );
 }

@@ -8,6 +8,7 @@ import Schedule from "@/components/Schedule";
 import Contact from "@/components/Contact";
 import Gallery from "@/components/Gallery";
 import Sponsors from "@/components/Sponsors";
+import Methodology from "@/components/Methodology";
 
 export default function HomePage() {
   return (
@@ -17,6 +18,7 @@ export default function HomePage() {
       <Main />
       <Counter /> {/* Aquí se renderiza el contador */}
       <About />
+      <Methodology />
       <Staff />
       <Achievements />
       <Schedule />
