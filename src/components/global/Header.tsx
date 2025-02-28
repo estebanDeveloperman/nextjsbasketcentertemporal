@@ -3,8 +3,9 @@ import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { FiMenu, FiX } from "react-icons/fi"; // Íconos de menú
+import { FiMenu, FiX } from "react-icons/fi";
 import { MdLocalGroceryStore } from "react-icons/md";
+import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
 
 // Definir las rutas y elementos del menú
 const menuItems = [
@@ -22,24 +23,19 @@ export default function Header() {
   const router = useRouter();
   const pathname = usePathname();
 
-  // Función para manejar la navegación con scroll correcto
   const handleNavigation = (href: string) => {
     if (href.startsWith("#")) {
       if (pathname === "/") {
-        // Si ya está en la home, solo hace scroll
         document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
       } else {
-        // Si está en otra página, redirige a "/" y luego hace scroll
         router.push(`/${href}`);
       }
     } else {
-      // Para enlaces normales, solo navega
       router.push(href);
     }
     setMenuOpen(false);
   };
 
-  // Cuando llegue a la home, hace scroll automático si hay un hash en la URL
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.hash) {
       const target = document.querySelector(window.location.hash);
@@ -50,10 +46,44 @@ export default function Header() {
   }, [pathname]);
 
   return (
-    <header
-      className="fixed z-50 w-full bg-[#222222] text-white shadow-md"
-      style={{ top: 0 }}
-    >
+    <header className="fixed z-50 w-full bg-[#000000] text-white shadow-md top-0">
+      {/* Barra superior con redes sociales */}
+      <div className="bg-[#e43920] text-white py-2 text-sm">
+        <div className="container mx-auto flex justify-between items-center px-4 md:px-8">
+          <div className="flex gap-4">
+            <Link
+              href="https://wa.me/51926868587"
+              target="_blank"
+              aria-label="WhatsApp"
+              className="hover:text-gray-200 transition"
+            >
+              <FaWhatsapp size={20} />
+            </Link>
+            <Link
+              href="https://www.instagram.com/clubbasketcenter/"
+              target="_blank"
+              aria-label="Instagram"
+              className="hover:text-gray-200 transition"
+            >
+              <FaInstagram size={20} />
+            </Link>
+            <Link
+              href="https://web.facebook.com/basketcenter.pe"
+              target="_blank"
+              aria-label="Facebook"
+              className="hover:text-gray-200 transition"
+            >
+              <FaFacebook size={20} />
+            </Link>
+            <span className="text-xs md:text-sm font-semibold">
+              ¡Síguenos en redes sociales! Contáctanos para tu clase de prueba
+              gratuita
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Barra de navegación principal */}
       <nav
         className="container mx-auto flex items-center justify-between p-4 lg:px-8"
         aria-label="Menú principal"
