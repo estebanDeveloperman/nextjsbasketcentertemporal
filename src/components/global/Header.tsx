@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
 import { MdLocalGroceryStore } from "react-icons/md";
-import { FaWhatsapp, FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaFacebook, FaTiktok, FaYoutube } from "react-icons/fa";
 
 // Definir las rutas y elementos del menú
 const menuItems = [
@@ -48,9 +48,9 @@ export default function Header() {
   return (
     <header className="fixed z-50 w-full bg-[#000000] text-white shadow-md top-0">
       {/* Barra superior con redes sociales */}
-      <div className="bg-[#e43920] text-white py-2 text-sm">
+      <div className="bg-[#222222] text-white py-2 text-sm">
         <div className="container mx-auto flex justify-between items-center px-4 md:px-8">
-          <div className="flex gap-4">
+          <div className="flex gap-4" style={{ marginLeft: "68px" }}>
             <Link
               href="https://wa.me/51926868587"
               target="_blank"
@@ -75,10 +75,28 @@ export default function Header() {
             >
               <FaFacebook size={20} />
             </Link>
-            <span className="text-xs md:text-sm font-semibold">
+            <Link
+              href="https://www.tiktok.com/@clubbasketcenter"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-white hover:text-[#e43920] transition-colors duration-300"
+            >
+              <FaTiktok size={20} />
+            </Link>
+            <Link
+              href="https://www.youtube.com/@clubbasketcenter/featured"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-white hover:text-[#e43920] transition-colors duration-300"
+            >
+              <FaYoutube size={20} />
+            </Link>
+            {/* <span className="text-xs md:text-sm font-semibold">
               ¡Síguenos en redes sociales! Contáctanos para tu clase de prueba
               gratuita
-            </span>
+            </span> */}
           </div>
         </div>
       </div>
