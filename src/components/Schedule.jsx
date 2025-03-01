@@ -93,8 +93,9 @@ export default function Schedule() {
                                 <p className="text-white flex items-center">
                                     <FaClock className="mr-2 text-white" /> Hora: {item.horaInicio} / {item.horaFin}
                                 </p>
-                                <p className="text-white flex items-center">
-                                    <FaCalendarAlt className="mr-2 text-white" /> Días: {item.dias.join(" - ")}
+                                <p className="text-white flex items-center whitespace-nowrap overflow-hidden text-[clamp(12px, 2vw, 16px)]">
+                                    <FaCalendarAlt className="mr-2 text-white" />
+                                    Días: {item.dias.join(" - ")}
                                 </p>
                                 <div className="mt-4 text-center">
                                     <a
